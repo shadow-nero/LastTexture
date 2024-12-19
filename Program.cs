@@ -52,7 +52,7 @@ namespace LastTexture
                 else if (File.Exists(inputPath) && Path.GetExtension(inputPath).ToLower() == ".png")
                 {
                     string outputFile = outputPath ?? Path.ChangeExtension(inputPath, ".shtxps");
-                    ConvertPNGToSHTXPS(inputFile, outputFile); // Converter de PNG para SHTXPS
+                    ConvertPNGToSHTXPS(inputPath, outputFile); // Converter de PNG para SHTXPS
                 }
                 else
                 {
@@ -86,7 +86,7 @@ namespace LastTexture
         static void ConvertSHTXPSToPNG(string inputFile, string outputFile)
         {
             SHTXReader reader = new SHTXReader(inputFile, outputFile);
-            reader.Read(); // Presumindo que o método Read converta o arquivo SHTXPS para PNG
+            //reader.Read(); // Presumindo que o método Read converta o arquivo SHTXPS para PNG
             Console.WriteLine($"Arquivo {inputFile} convertido para {outputFile}");
         }
 
@@ -94,7 +94,7 @@ namespace LastTexture
         static void ConvertPNGToSHTXPS(string inputFile, string outputFile)
         {
             SHTXWritter writer = new SHTXWritter(inputFile, outputFile);
-            writer.Write(); // Presumindo que o método Write converta o arquivo PNG para SHTXPS
+            // writer.Write(); // Presumindo que o método Write converta o arquivo PNG para SHTXPS
             Console.WriteLine($"Arquivo {inputFile} convertido para {outputFile}");
         }
 
