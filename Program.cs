@@ -8,9 +8,14 @@ namespace LastTexture
         static void Main(string[] args)
         {
             // Verifica se os parâmetros foram passados corretamente
+            //SHTXWritter writer = new SHTXWritter("2334-nq8.png", "teste.shtxps");
+           // SHTXReader reader = new SHTXReader("teste.shtxps", "2334-test.png");
+
+           // return;
             if (args.Length < 2)
             {
                 ShowHelp();
+                Console.ReadLine();
                 return;
             }
 
@@ -36,7 +41,7 @@ namespace LastTexture
                 }
                 else
                 {
-                    Console.WriteLine("Arquivo ou diretório inválido.");
+                    Console.WriteLine("Invalid file or directory.");
                 }
             }
             else if (command == "-r")
@@ -56,16 +61,16 @@ namespace LastTexture
                 }
                 else
                 {
-                    Console.WriteLine("Arquivo ou diretório inválido.");
+                    Console.WriteLine("Invalid file or directory.");
                 }
             }
-            else if (command == "help")
+            else if (command == "-help")
             {
                 ShowHelp(); // Exibe o comando de ajuda
             }
             else
             {
-                Console.WriteLine("Comando inválido.");
+                Console.WriteLine("Invalid command.");
                 ShowHelp();
             }
         }
@@ -73,13 +78,13 @@ namespace LastTexture
         // Exibe a ajuda sobre os comandos
         static void ShowHelp()
         {
-            Console.WriteLine("Uso:");
-            Console.WriteLine("  -e [diretório ou arquivo] [diretório de saída ou arquivo de saída] : Converte SHTXPS para PNG.");
-            Console.WriteLine("  -r [diretório ou arquivo] [diretório de saída ou arquivo de saída] : Converte PNG para SHTXPS.");
-            Console.WriteLine("  help : Exibe este comando de ajuda.");
+            Console.WriteLine("Usage:");
+            Console.WriteLine("  -e [directory or file] [output directory or file] : Convert SHTXPS to PNG.");
+            Console.WriteLine("  -r [directory or file] [output directory or file] : Convert PNG to SHTXPS.");
+            Console.WriteLine("  -help : Display this help command.");
             Console.WriteLine();
-            Console.WriteLine("Se o parâmetro for um diretório, o programa irá converter todos os arquivos .SHTXPS para PNG ou todos os arquivos .PNG para SHTXPS na pasta.");
-            Console.WriteLine("Se o parâmetro de saída não for fornecido, o diretório de entrada será usado como o diretório de saída.");
+            Console.WriteLine("If the parameter is a directory, the program will convert all .SHTXPS files\nto PNG or all .PNG files to SHTXPS in the folder.");
+            Console.WriteLine("If the output parameter is not provided, the input directory will be used as\nthe output directory.");
         }
 
         // Método para converter de SHTXPS para PNG
@@ -87,7 +92,7 @@ namespace LastTexture
         {
             SHTXReader reader = new SHTXReader(inputFile, outputFile);
             //reader.Read(); // Presumindo que o método Read converta o arquivo SHTXPS para PNG
-            Console.WriteLine($"Arquivo {inputFile} convertido para {outputFile}");
+            Console.WriteLine($"File {inputFile} converted to {outputFile}");
         }
 
         // Método para converter de PNG para SHTXPS
@@ -95,7 +100,7 @@ namespace LastTexture
         {
             SHTXWritter writer = new SHTXWritter(inputFile, outputFile);
             // writer.Write(); // Presumindo que o método Write converta o arquivo PNG para SHTXPS
-            Console.WriteLine($"Arquivo {inputFile} convertido para {outputFile}");
+            Console.WriteLine($"File {inputFile} converted to {outputFile}.");
         }
 
         // Método para converter todos os arquivos SHTXPS em uma pasta para PNG
