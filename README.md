@@ -94,8 +94,7 @@ The tool can automatically detect files in the specified directory and convert t
 
 A heartfelt thanks to the following individuals and resources for their contributions and inspiration:  
 
-- **[AraAra]** First person shows that it is possible to modify the game's textures easily and efficiently 
-. 
+- **[AraAra064](https://github.com/AraAra064)** First person shows that it is possible to modify the game's textures easily and efficiently.
 
 Feel free to contribute, report issues, or suggest features via the [LastTexture GitHub repository](https://github.com/shadow-nero/LastTexture).  
 
