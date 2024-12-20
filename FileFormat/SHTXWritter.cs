@@ -50,6 +50,10 @@ namespace LastTexture
             if (Palette.Count > 256)
                 throw new Exception("The image contains more colors than allowed for an 8bpp Indexed format.");
 
+            while (Palette.Count < 256)
+            {
+                Palette.Add(Color.Black);
+            }
             // Create a new 8bpp image
             Bitmap image = new Bitmap(original.Width, original.Height, PixelFormat.Format8bppIndexed);
             BitmapData data = image.LockBits(new Rectangle(0, 0, image.Width, image.Height), ImageLockMode.WriteOnly, PixelFormat.Format8bppIndexed);
