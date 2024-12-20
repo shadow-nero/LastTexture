@@ -3,7 +3,6 @@
 This tool was developed to simplify the conversion of `.SHTXPS` texture files to `.PNG` and vice versa. It's designed for use in modding and working with games or applications that utilize the `.SHTXPS` format.  
 
 Whether you're a modding enthusiast or a developer, **LastTexture** aims to make texture management more accessible and efficient.
-
 ---
 
 ## Table of Contents
@@ -34,6 +33,7 @@ To use the tool, download the latest release from the [LastTexture releases page
 ```bash
 LastTexture.exe [command] [input path] [output path]
 ```
+Note: The image must have 256 colors or less to work. 
 
 #### Available Commands
 
